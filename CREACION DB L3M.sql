@@ -164,6 +164,8 @@ CREATE TABLE HORAS_SEMANALES(
 
 /*PERSONA DEFECTO ES UN CLIENTE*/
 
- INSERT INTO PERSONAS (Cedula, Nombre, Apellido1, Apellido2, FechaNac, Sexo) VALUES (0, 'CLIENTE', 'CLIENTE', 'CLIENTE', '20160101', 'Masculino');
+ INSERT INTO PERSONA (Cedula, Nombre, Apellido1, Apellido2, FechaNac, Sexo) VALUES (0, 'CLIENTE', 'CLIENTE', 'CLIENTE', '20160101', 'Masculino');
 /*TRABAJADOR DEFAULT ES UN CLIENTE ID 0 */
-INSERT INTO TRABAJADOR (CedulaPersona, SalarioHora, FechaIng) VALUES (0, 0, '20160101'); 
+INSERT INTO TRABAJADOR (CedulaPersona, SalarioHora, FechaIngreso) VALUES (0, 0, '20160101'); 
+
+

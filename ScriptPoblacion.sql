@@ -7,17 +7,17 @@ INSERT INTO ROL (Nombre, Descripcion)  VALUES ('Reportador', 'Tiene permisos de 
 INSERT INTO ROL (Nombre, Descripcion)  VALUES ('Cajero', 'Atiende la sucursal');
 
 /*Creacion de sucursales, EL ID es autoincremental */
-INSERT INTO SUCURSAL (Nombre, Provincia, Canton, Distrito) VALUES ('L3M Cartago', Cartago, Cartago, Cartago); /*se crea con el ID = 1*/
+INSERT INTO SUCURSAL (Nombre, Provincia, Canton, Distrito) VALUES ('L3M Cartago', 'Cartago', 'Cartago', 'Cartago'); /*se crea con el ID = 1*/
 
 
 /*CREACION PERSONAS */
-INSERT INTO PERSONAS (Cedula, Nombre, Apellido1, Apellido2, FechaNac, Sexo) VALUES (205100310, 'Rodrigo', 'Ramirez', 'Fernández', '19900517', 'Masculino');
-INSERT INTO PERSONAS (Cedula, Nombre, Apellido1, Apellido2, FechaNac, Sexo) VALUES (103200710, 'Alberto', 'Rojas', 'Salazar', '19891123', 'Masculino');
-INSERT INTO PERSONAS (Cedula, Nombre, Apellido1, Apellido2, FechaNac, Sexo) VALUES (308100690, 'María', 'Gutierrez', 'Loría', '19880321', 'Femenino');
+INSERT INTO PERSONA (Cedula, Nombre, Apellido1, Apellido2, FechaNac, Sexo) VALUES (205100310, 'Rodrigo', 'Ramirez', 'Fernández', '19900517', 'Masculino');
+INSERT INTO PERSONA (Cedula, Nombre, Apellido1, Apellido2, FechaNac, Sexo) VALUES (103200710, 'Alberto', 'Rojas', 'Salazar', '19891123', 'Masculino');
+INSERT INTO PERSONA (Cedula, Nombre, Apellido1, Apellido2, FechaNac, Sexo) VALUES (308100690, 'María', 'Gutierrez', 'Loría', '19880321', 'Femenino');
 
 /*CREACION TRABAJADORES (Une personas de la tabla PERSONAS a esta tabla), el ID es autoincremental*/
-INSERT INTO TRABAJADOR (CedulaPersona, SalarioHora, FechaIng) VALUES (308100690, 3000, '20160105'); /*Agrega a maria gutierrez como trabajadora con el ID 1*/
-INSERT INTO TRABAJADOR (CedulaPersona, SalarioHora, FechaIng) VALUES (205100310, 5000, '20160912'); /*Agrega a Rodrigo ramirez como trabajador con el ID 2*/
+INSERT INTO TRABAJADOR (CedulaPersona, SalarioHora, FechaIngreso) VALUES (308100690, 3000, '20160105'); /*Agrega a maria gutierrez como trabajadora con el ID 1*/
+INSERT INTO TRABAJADOR (CedulaPersona, SalarioHora, FechaIngreso) VALUES (205100310, 5000, '20160912'); /*Agrega a Rodrigo ramirez como trabajador con el ID 2*/
 
 /*Asigna rol a los trabajores (Al menos uno para cada uno, pero pueden tener mas de uno) */
 INSERT INTO ROLTRABAJADOR (IDRol, IDTrabajador) VALUES (1, 1); /* Maria como administradora*/
@@ -52,11 +52,11 @@ INSERT INTO PRODUCTO (Nombre, Descripcion, PrecioCompra, Impuesto) VALUES ('Ques
 
 /*Asigna productos a un proveedor */
 
-INSERT INTO PROVEIDO_POR (CodigoBarras, CedulaProveedor) VALUES (1, 1); /* coca cola 600ml por coca cola */
-INSERT INTO PROVEIDO_POR (CodigoBarras, CedulaProveedor) VALUES (2, 1); /*fanta naranja 600ml por coca cola */
-INSERT INTO PROVEIDO_POR (CodigoBarras, CedulaProveedor) VALUES (3, 1); /*coca cola 1l por coca cola*/
-INSERT INTO PROVEIDO_POR (CodigoBarras, CedulaProveedor) VALUES (4, 2); /* leche 1l por dos pinos */
-INSERT INTO PROVEIDO_POR (CodigoBarras, CedulaProveedor) VALUES (5, 2); /*queso turrialba por dos pinos */
+INSERT INTO PROVEIDO_POR (CodigoBarras, CedProveedor) VALUES (1, 0110623012); /* coca cola 600ml por coca cola */
+INSERT INTO PROVEIDO_POR (CodigoBarras, CedProveedor) VALUES (2, 0110623012); /*fanta naranja 600ml por coca cola */
+INSERT INTO PROVEIDO_POR (CodigoBarras, CedProveedor) VALUES (3, 0110623012); /*coca cola 1l por coca cola*/
+INSERT INTO PROVEIDO_POR (CodigoBarras, CedProveedor) VALUES (4, 0221507954); /* leche 1l por dos pinos */
+INSERT INTO PROVEIDO_POR (CodigoBarras, CedProveedor) VALUES (5, 0221507954); /*queso turrialba por dos pinos */
 
 /*Asigna productos a una sucursal, descuento es un porcentaje, precio de venta es lo que se le suma al precio de compra para venderlo en esta sucursal */
 
